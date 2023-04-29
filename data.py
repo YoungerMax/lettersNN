@@ -30,7 +30,7 @@ listOfImages = []
 for folder in getFiles("."):
     os.chdir(folder)
     for index,file in enumerate(getFiles(".")):
-        os.rename(file, f"{folder}-{index}.png")
+        #os.rename(file, f"{folder}-{index}.png")
         listOfImages.append(f"dataset\\{folder}\\{folder}-{index}.png")
     os.chdir("..")
 os.chdir("..")
@@ -40,5 +40,4 @@ for path in listOfImages:
     
     shutil.copy2(os.getcwd()+"\\"+path,os.getcwd()+"\\"+"newData") 
     
-
-
+    
