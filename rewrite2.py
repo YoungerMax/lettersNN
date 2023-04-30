@@ -83,5 +83,5 @@ print(X[0])
 clf.fit(X, y)
 
 print(clf.predict(
-    [get_letter_activation("low-d-0.png")]
+    [get_letter_activation("cap-q-0.png")]
 ))  
