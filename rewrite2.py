@@ -8,22 +8,27 @@ import numpy as np
 
 
 listOfImages = os.listdir("newData")
+listOfLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+os.chdir("newData")
+
 random.shuffle(listOfImages)
 
-def mean(values):
+def mean(values: int) -> float:
     x = sum(values)/len(values)
     return x
 
-def get_letter_activation(filename):
-    prepath = os.getcwd()
-    path = f"{prepath}\\newData\\{filename}"
+def get_letter_activation(path:str) -> list:
     img = Image.open(path)
     
-    greyvalues = [mean(x) for x in img.getdata()]
-    x = greyvalues
-    greyvalues = (x-np.min(x))/(np.max(x)-np.min(x))
-    greyvalues = [round(xs,2) for xs in greyvalues]
-    return greyvalues
+    gv = [mean(x) for x in img.getdata()]
+    gv = (gv-np.min(gv))/(np.max(gv)-np.min(gv))
+    gv = [round(xs,2) for xs in gv]
+    return gv
+
+def confirm_output(output: np.array, letter: str) -> bool:
+    output = output[0].tolist()
+    return output.index(1) == listOfLetters.index(letter.lower()) and letter.isupper() == bool(output[-1])
+    
 
 
 
@@ -37,16 +42,11 @@ for f in listOfImages:
     input_vectors_list.append(greyvalues)
     df = [0]*27
     
-    listOfLetters = ["-a", "-b", "-c", "-d", "-e", "-f", "-g", "-h", "-i", "-j", "-k", "-l", "-m", "-o", "-p", "-q", "-r", "-s", "-t", "-u", "-v", "-w", "-x", "-y", "-z"]
     
     if "cap-" in f:
         df[26]=1
-    else: df[26]=0
         
-    for i,v in enumerate(listOfLetters):
-        if v in f:
-            df[i]=1
-            break
+    df[listOfLetters.index(f[4])] = 1
     targets_list.append(df)
     
 
@@ -82,6 +82,14 @@ print(X[0])
 
 clf.fit(X, y)
 
-print(clf.predict(
-    [get_letter_activation("cap-q-0.png")]
-))  
+
+
+prediction = clf.predict(
+    [get_letter_activation("cap-q-5.png")] 
+)
+print(prediction)
+
+print(confirm_output(prediction, "Q"))
+
+
+
