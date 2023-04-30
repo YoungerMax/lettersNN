@@ -9,7 +9,7 @@ import random
 
 class NeuralNetwork:
     def __init__(self, learning_rate):
-        self.weights = np.array([np.random.randn(), np.random.randn()])
+        self.weights = np.array([np.random.randn(), np.random.randn()]*392)
         self.bias = np.random.randn()
         self.learning_rate = learning_rate
 
@@ -22,8 +22,8 @@ class NeuralNetwork:
     def predict(self, input_vector):
         layer_1 = np.dot(input_vector, self.weights) + self.bias
         layer_2 = self._sigmoid(layer_1)
-        layer_3 = self._sigmoid(layer_2)
-        prediction = layer_3
+    
+        prediction = layer_2
         return prediction
 
     def _compute_gradients(self, input_vector, target):
@@ -31,11 +31,13 @@ class NeuralNetwork:
         layer_2 = self._sigmoid(layer_1)
         prediction = layer_2
 
-        derror_dprediction = 2 * (prediction - target)
+        derror_dprediction = mean(2 * (prediction - target))
         dprediction_dlayer1 = self._sigmoid_deriv(layer_1)
         dlayer1_dbias = 1
         dlayer1_dweights = (0 * self.weights) + (1 * input_vector)
-
+        print(dprediction_dlayer1)
+        print(derror_dprediction)
+        print(dlayer1_dbias)
         derror_dbias = (
             derror_dprediction * dprediction_dlayer1 * dlayer1_dbias
         )
@@ -51,8 +53,6 @@ class NeuralNetwork:
             derror_dweights * self.learning_rate
         )
     
-     # ...
- 
     def train(self, input_vectors, targets, iterations):
         cumulative_errors = []
         for current_iteration in range(iterations):
@@ -73,9 +73,19 @@ class NeuralNetwork:
             if current_iteration % 100 == 0:
                 cumulative_error = 0
                 # Loop through all the instances to measure the error
+                #input_vectors.reshape(27,1870)
+                print(input_vectors.shape)
+
                 for data_instance_index in range(len(input_vectors)):
+                    print(data_instance_index)
                     data_point = input_vectors[data_instance_index]
-                    target = targets[data_instance_index]
+                    new_targets = targets.reshape(1870,27)#.tolist()
+
+                    
+                    
+
+
+                    target = new_targets[data_instance_index]
 
                     prediction = self.predict(data_point)
                     error = np.square(prediction - target)
@@ -91,30 +101,32 @@ random.shuffle(listOfImages)
 
 
 
-input_vectors = np.array(
-    []
-)
 
-targets = np.array(
-    []
-)
 
 
 
 def mean(values):
-    return sum(values)/len(values)
+    x = sum(values)/len(values)
+    
+    return x
 
 prepath = os.getcwd()
 
 
+input_vectors_list = []
+targets_list = []
+
+
 for f in listOfImages:
     
-    path = f"{prepath}\\{f}"
+    path = f"{prepath}\\newData\\{f}"
     img = Image.open(path)
     
-    greyvalues = [mean(x) for x in img.getdata()]
-    
-    np.append(input_vectors, greyvalues)
+    greyvalues = np.array([mean(x) for x in img.getdata()])
+    x = greyvalues
+    greyvalues = (x-np.min(x))/(np.max(x)-np.min(x))
+
+    input_vectors_list.append(greyvalues)
     
     df = [0]*27
     
@@ -127,10 +139,22 @@ for f in listOfImages:
     for i,v in enumerate(listOfLetters):
         if v in f:
             df[i]=1
-            np.append(targets,df)
+            targets_list.append(df)
             break
-    
-    
+
+
+
+input_vectors = np.array(
+    input_vectors_list
+) 
+
+
+
+targets = np.array(
+    targets_list
+)
+
+
 
 learning_rate = 0.001
 
@@ -142,4 +166,3 @@ plt.plot(training_error)
 plt.xlabel("Iterations")
 plt.ylabel("Error for all training instances")
 plt.savefig("cumulative_error.png")
-
