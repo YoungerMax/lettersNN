@@ -1,116 +1,37 @@
-import matplotlib.pyplot as plt
-from PIL import Image
+from sklearn.neural_network import MLPClassifier
 import numpy as np
+
 import os
 import random
+from PIL import Image
 
-
-
-
-class NeuralNetwork:
-    def __init__(self, learning_rate):
-        self.weights = np.array([np.random.randn(), np.random.randn()]*392)
-        self.bias = np.random.randn()
-        self.learning_rate = learning_rate
-
-    def _sigmoid(self, x):
-        return 1 / (1 + np.exp(-x))
-
-    def _sigmoid_deriv(self, x):
-        return self._sigmoid(x) * (1 - self._sigmoid(x))
-
-    def predict(self, input_vector):
-        layer_1 = np.dot(input_vector, self.weights) + self.bias
-        layer_2 = self._sigmoid(layer_1)
-    
-        prediction = layer_2
-        return prediction
-
-    def _compute_gradients(self, input_vector, target):
-        layer_1 = np.dot(input_vector, self.weights) + self.bias
-        layer_2 = self._sigmoid(layer_1)
-        prediction = layer_2
-
-        derror_dprediction = mean(2 * (prediction - target))
-        dprediction_dlayer1 = self._sigmoid_deriv(layer_1)
-        dlayer1_dbias = 1
-        dlayer1_dweights = (0 * self.weights) + (1 * input_vector)
-        print(dprediction_dlayer1)
-        print(derror_dprediction)
-        print(dlayer1_dbias)
-        derror_dbias = (
-            derror_dprediction * dprediction_dlayer1 * dlayer1_dbias
-        )
-        derror_dweights = (
-            derror_dprediction * dprediction_dlayer1 * dlayer1_dweights
-        )
-
-        return derror_dbias, derror_dweights
-
-    def _update_parameters(self, derror_dbias, derror_dweights):
-        self.bias = self.bias - (derror_dbias * self.learning_rate)
-        self.weights = self.weights - (
-            derror_dweights * self.learning_rate
-        )
-    
-    def train(self, input_vectors, targets, iterations):
-        cumulative_errors = []
-        for current_iteration in range(iterations):
-            # Pick a data instance at random
-            random_data_index = np.random.randint(len(input_vectors))
-
-            input_vector = input_vectors[random_data_index]
-            target = targets[random_data_index]
-
-            # Compute the gradients and update the weights
-            derror_dbias, derror_dweights = self._compute_gradients(
-                input_vector, target
-            )
-
-            self._update_parameters(derror_dbias, derror_dweights)
-
-            # Measure the cumulative error for all the instances
-            if current_iteration % 100 == 0:
-                cumulative_error = 0
-                # Loop through all the instances to measure the error
-                #input_vectors.reshape(27,1870)
-                print(input_vectors.shape)
-
-                for data_instance_index in range(len(input_vectors)):
-                    print(data_instance_index)
-                    data_point = input_vectors[data_instance_index]
-                    new_targets = targets.reshape(1870,27)#.tolist()
-
-                    
-                    
-
-
-                    target = new_targets[data_instance_index]
-
-                    prediction = self.predict(data_point)
-                    error = np.square(prediction - target)
-
-                    cumulative_error = cumulative_error + error
-                cumulative_errors.append(cumulative_error)
-
-        return cumulative_errors
-        
 
 listOfImages = os.listdir("newData")
+listOfLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+os.chdir("newData")
+
 random.shuffle(listOfImages)
 
-
-
-
-
-
-
-def mean(values):
+def mean(values: int) -> float:
     x = sum(values)/len(values)
-    
     return x
 
-prepath = os.getcwd()
+def get_letter_activation(path: str) -> list:
+    img = Image.open(path)
+    
+    gv = [mean(x) for x in img.getdata()]
+    gv = (gv-np.min(gv))/(np.max(gv)-np.min(gv))
+    gv = [round(xs,2) for xs in gv]
+    return gv
+
+def confirm_output(output: np.array, letter: str) -> bool:
+    output = output[0].tolist()
+    assumed_letter = listOfLetters[output.index(1)].lower()
+    if output[-1]:
+        assumed_letter = assumed_letter.upper()
+    return [assumed_letter, assumed_letter == letter]
+    
+
 
 
 input_vectors_list = []
@@ -118,51 +39,58 @@ targets_list = []
 
 
 for f in listOfImages:
-    
-    path = f"{prepath}\\newData\\{f}"
-    img = Image.open(path)
-    
-    greyvalues = np.array([mean(x) for x in img.getdata()])
-    x = greyvalues
-    greyvalues = (x-np.min(x))/(np.max(x)-np.min(x))
-
-    input_vectors_list.append(greyvalues)
-    
+    input_vectors_list.append(get_letter_activation(f))
     df = [0]*27
     
-    listOfLetters = ["-a", "-b", "-c", "-d", "-e", "-f", "-g", "-h", "-i", "-j", "-k", "-l", "-m", "-o", "-p", "-q", "-r", "-s", "-t", "-u", "-v", "-w", "-x", "-y", "-z"]
     
     if "cap-" in f:
         df[26]=1
-    else: df[26]=0
         
-    for i,v in enumerate(listOfLetters):
-        if v in f:
-            df[i]=1
-            targets_list.append(df)
-            break
+    df[listOfLetters.index(f[4])] = 1
+    targets_list.append(df)
+    
 
 
+X = input_vectors_list
+X = np.nan_to_num(X)
+y = targets_list
 
-input_vectors = np.array(
-    input_vectors_list
-) 
+clf = MLPClassifier(hidden_layer_sizes=(100,), 
+                    activation='relu', 
+                    solver='adam', 
+                    alpha=0.0001, 
+                    batch_size='auto', 
+                    learning_rate='constant', 
+                    learning_rate_init=0.001, 
+                    power_t=0.5, 
+                    max_iter=500, 
+                    shuffle=True, 
+                    random_state=None, 
+                    tol=0.0001, 
+                    verbose=True, 
+                    warm_start=False,
+                    momentum=0.9, 
+                    nesterovs_momentum=True, 
+                    early_stopping=False, 
+                    validation_fraction=0.1, 
+                    beta_1=0.9, beta_2=0.999, 
+                    epsilon=1e-08, 
+                    n_iter_no_change=10, 
+                    max_fun=15000)
+
+print(X[0])
+
+clf.fit(X, y)
 
 
-
-targets = np.array(
-    targets_list
+os.chdir("../testing")
+prediction = clf.predict(
+    [get_letter_activation("cap-a-0.png")] 
 )
+print(prediction)
+
+print(confirm_output(prediction, "A"))
 
 
 
-learning_rate = 0.001
-
-neural_network = NeuralNetwork(learning_rate)
-
-training_error = neural_network.train(input_vectors, targets, 10000)
-
-plt.plot(training_error)
-plt.xlabel("Iterations")
-plt.ylabel("Error for all training instances")
-plt.savefig("cumulative_error.png")
+#balls
