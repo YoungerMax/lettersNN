@@ -27,7 +27,10 @@ def get_letter_activation(path:str) -> list:
 
 def confirm_output(output: np.array, letter: str) -> bool:
     output = output[0].tolist()
-    return output.index(1) == listOfLetters.index(letter.lower()) and letter.isupper() == bool(output[-1])
+    assumed_letter = listOfLetters[output.index(1)].lower()
+    if output[-1]:
+        assumed_letter = assumed_letter.upper()
+    return [assumed_letter, assumed_letter == letter]
     
 
 
@@ -37,9 +40,7 @@ targets_list = []
 
 
 for f in listOfImages:
-    
-    greyvalues = get_letter_activation(f)
-    input_vectors_list.append(greyvalues)
+    input_vectors_list.append(get_letter_activation(f))
     df = [0]*27
     
     
