@@ -16,7 +16,7 @@ def mean(values: int) -> float:
     x = sum(values)/len(values)
     return x
 
-def get_letter_activation(path:str) -> list:
+def get_letter_activation(path: str) -> list:
     img = Image.open(path)
     
     gv = [mean(x) for x in img.getdata()]
@@ -83,13 +83,14 @@ print(X[0])
 clf.fit(X, y)
 
 
-
+os.chdir("../testing")
 prediction = clf.predict(
-    [get_letter_activation("cap-q-5.png")] 
+    [get_letter_activation("cap-a-0.png")] 
 )
 print(prediction)
 
-print(confirm_output(prediction, "Q"))
+print(confirm_output(prediction, "A"))
 
 
 
+#balls
