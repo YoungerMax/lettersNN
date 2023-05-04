@@ -84,7 +84,9 @@ clf = MLPClassifier(hidden_layer_sizes=(100,),
 
 clf.fit(X, y)
 
+# Testing procedure
 
+# """
 os.chdir("../testing")
 images = sorted(os.listdir("."))
 incorrect_letters = {}
@@ -121,3 +123,4 @@ results_fraction = f"{len(images)-len(incorrect_letters)}/{len(images)}"
 qs.defaults.values["color"] = "blue"
 qs.cprint(f"Correct Guesses: {results_fraction} | {round(eval(results_fraction)*100)}%")
 qs.cprint(f"Incorrect Guesses (intended : assumed): {incorrect_letters}")
+# """
