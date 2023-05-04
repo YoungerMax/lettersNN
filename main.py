@@ -3,8 +3,8 @@ import numpy as np
 
 import os
 import random
+import quick_styles as qs
 from PIL import Image
-
 
 listOfImages = os.listdir("newData")
 listOfLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -26,12 +26,13 @@ def get_letter_activation(path: str) -> list:
 
 def confirm_output(output: np.array, letter: str) -> bool:
     output = output[0].tolist()
-    assumed_letter = listOfLetters[output.index(1)].lower()
+    assumed_letter = listOfLetters[output[:-1].index(1)].lower()
     if output[-1]:
         assumed_letter = assumed_letter.upper()
     return [assumed_letter, assumed_letter == letter]
     
-
+def path_to_letter(path: str) -> str:
+    return path[4].upper() if "cap-" in path else path[4]
 
 
 input_vectors_list = []
@@ -42,11 +43,14 @@ for f in listOfImages:
     input_vectors_list.append(get_letter_activation(f))
     df = [0]*27
     
+    letter = path_to_letter(f)
+
     
-    if "cap-" in f:
-        df[26]=1
+    
+    if letter.isupper():
+        df[-1] = 1
         
-    df[listOfLetters.index(f[4])] = 1
+    df[listOfLetters.index(letter.lower())] = 1
     targets_list.append(df)
     
 
@@ -78,19 +82,45 @@ clf = MLPClassifier(hidden_layer_sizes=(100,),
                     n_iter_no_change=10, 
                     max_fun=15000)
 
-print(X[0])
-
 clf.fit(X, y)
 
+# Testing procedure
 
+# """
 os.chdir("../testing")
-prediction = clf.predict(
-    [get_letter_activation("cap-a-0.png")] 
-)
-print(prediction)
+images = sorted(os.listdir("."))
+incorrect_letters = {}
 
-print(confirm_output(prediction, "A"))
+for i in images:
+    intended_letter = path_to_letter(i)
+    activation = get_letter_activation(i)
+    qs.defaults.values["color"] = "yellow"
 
+    qs.cprint(f"Path: {i}")
+    qs.cprint(f"Intended Letter: {intended_letter}")
 
+    prediction = clf.predict(
+        [activation]
+    )
 
-#balls
+    qs.cprint(f"Raw Prediction: {prediction}")
+    qs.defaults.reset()
+
+    try:
+        assumed_letter, truth = confirm_output(prediction, intended_letter)
+        if not truth:
+            incorrect_letters[intended_letter] = assumed_letter
+            qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | incorrect", color="red")
+            continue
+    except:
+        incorrect_letters[intended_letter] = "Error"
+        qs.cprint("Unable to generate prediction | incorrect", color="red")
+        continue
+
+    qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | correct", color="green")
+
+results_fraction = f"{len(images)-len(incorrect_letters)}/{len(images)}"
+qs.defaults.values["color"] = "blue"
+qs.cprint(f"Correct Guesses: {results_fraction} | {round(eval(results_fraction)*100)}%")
+qs.cprint(f"Incorrect Guesses (intended : assumed): {incorrect_letters}")
+# """
