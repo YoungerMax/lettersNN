@@ -110,11 +110,11 @@ for i in images:
         assumed_letter, truth = confirm_output(prediction, intended_letter)
         if not truth:
             incorrect_letters[intended_letter] = assumed_letter
-            qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | inncorect", color="red")
+            qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | incorrect", color="red")
             continue
     except:
         incorrect_letters[intended_letter] = "Error"
-        qs.cprint("Unable to generate prediction | inncorect", color="red")
+        qs.cprint("Unable to generate prediction | incorrect", color="red")
         continue
 
     qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | correct", color="green")
