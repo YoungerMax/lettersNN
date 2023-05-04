@@ -1,0 +1,210 @@
+Path: cap-a-0.png
+Intended Letter: A
+Raw Prediction: [[1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: A = A | correct
+Path: cap-b-0.png
+Intended Letter: B
+Raw Prediction: [[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: B = B | correct
+Path: cap-c-0.png
+Intended Letter: C
+Raw Prediction: [[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: c = C | inncorect
+Path: cap-d-0.png
+Intended Letter: D
+Raw Prediction: [[0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: D = D | correct
+Path: cap-e-0.png
+Intended Letter: E
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: cap-f-0.png
+Intended Letter: F
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: cap-g-0.png
+Intended Letter: G
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: cap-h-0.png
+Intended Letter: H
+Raw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: H = H | correct
+Path: cap-i-0.png
+Intended Letter: I
+Raw Prediction: [[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: B = I | inncorect
+Path: cap-j-0.png
+Intended Letter: J
+Raw Prediction: [[0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: I = J | inncorect
+Path: cap-k-0.png
+Intended Letter: K
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: k = K | inncorect
+Path: cap-l-0.png
+Intended Letter: L
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: L = L | correct
+Path: cap-m-0.png
+Intended Letter: M
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 1]]
+Guess: M = M | correct
+Path: cap-n-0.png
+Intended Letter: N
+Raw Prediction: [[0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: E = N | inncorect
+Path: cap-o-0.png
+Intended Letter: O
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: cap-p-0.png
+Intended Letter: P
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]]
+Guess: r = P | inncorect
+Path: cap-q-0.png
+Intended Letter: Q
+Raw Prediction: [[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1]]
+Guess: B = Q | inncorect
+Path: cap-r-0.png
+Intended Letter: R
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1]]
+Guess: R = R | correct
+Path: cap-s-0.png
+Intended Letter: S
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]]
+Guess: k = S | inncorect
+Path: cap-t-0.png
+Intended Letter: T
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: cap-u-0.png
+Intended Letter: U
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1]]
+Guess: U = U | correct
+Path: cap-v-0.png
+Intended Letter: V
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: cap-w-0.png
+Intended Letter: W
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1]]
+Guess: W = W | correct
+Path: cap-x-0.png
+Intended Letter: X
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1]]
+Guess: X = X | correct
+Path: cap-y-z.png
+Intended Letter: Y
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: cap-z-0.png
+Intended Letter: Z
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: low-a-0.png
+Intended Letter: a
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-b-0.png
+Intended Letter: b
+Raw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: h = b | inncorect
+Path: low-c-0.png
+Intended Letter: c
+Raw Prediction: [[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Guess: C = c | inncorect
+Path: low-d-0.png
+Intended Letter: d
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]]
+Guess: r = d | inncorect
+Path: low-e-0.png
+Intended Letter: e
+Raw Prediction: [[0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: e = e | correct
+Path: low-f-0.png
+Intended Letter: f
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]]
+Guess: r = f | inncorect
+Path: low-g-0.png
+Intended Letter: g
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+Unable to generate prediction | inncorect
+Path: low-h-0.png
+Intended Letter: h
+Raw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: h = h | correct
+Path: low-i-0.png
+Intended Letter: i
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-j-0.png
+Intended Letter: j
+Raw Prediction: [[0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: i = j | inncorect
+Path: low-k-0.png
+Intended Letter: k
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-l-0.png
+Intended Letter: l
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: l = l | correct
+Path: low-m-0.png
+Intended Letter: m
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0]]
+Guess: u = m | inncorect
+Path: low-n-0.png
+Intended Letter: n
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: n = n | correct
+Path: low-o-0.png
+Intended Letter: o
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]]
+Guess: u = o | inncorect
+Path: low-p-0.png
+Intended Letter: p
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: n = p | inncorect
+Path: low-q-0.png
+Intended Letter: q
+Raw Prediction: [[1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Guess: a = q | inncorect
+Path: low-r-0.png
+Intended Letter: r
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-s-0.png
+Intended Letter: s
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0]]
+Guess: s = s | correct
+Path: low-t-0.png
+Intended Letter: t
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-u-0.png
+Intended Letter: u
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]]
+Guess: u = u | correct
+Path: low-v-0.png
+Intended Letter: v
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-w-0.png
+Intended Letter: w
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0]]
+Guess: w = w | correct
+Path: low-x-0.png
+Intended Letter: x
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Path: low-y-0.png
+Intended Letter: y
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0]]
+Guess: x = y | inncorect
+Path: low-z-0.png
+Intended Letter: z
+Raw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+Unable to generate prediction | inncorect
+Correct Guesses: 17/52 | 33%
+Incorrect Guesses (intended : assumed): {'C': 'c', 'E': 'Error', 'F': 'Error', 'G': 'Error', 'I': 'B', 'J': 'I', 'K': 'k', 'N': 'E', 'O': 'Error', 'P': 'r', 'Q': 'B', 'S': 'k', 'T': 'Error', 'V': 'Error', 'Y': 'Error', 'Z': 'Error', 'a': 'Error', 'b': 'h', 'c': 'C', 'd': 'r', 'f': 'r', 'g': 'Error', 'i': 'Error', 'j': 'i', 'k': 'Error', 'm': 'u', 'o': 'u', 'p': 'n', 'q': 'a', 'r': 'Error', 't': 'Error', 'v': 'Error', 'x': 'Error', 'y': 'x', 'z': 'Error'}

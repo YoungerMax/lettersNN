@@ -112,11 +112,12 @@ for i in images:
             continue
     except:
         incorrect_letters[intended_letter] = "Error"
-        qs.cprint(f"Unable to generate prediction | inncorect", color="red")
+        qs.cprint("Unable to generate prediction | inncorect", color="red")
         continue
 
     qs.cprint(f"Guess: {assumed_letter} = {intended_letter} | correct", color="green")
 
+results_fraction = f"{len(images)-len(incorrect_letters)}/{len(images)}"
 qs.defaults.values["color"] = "blue"
-qs.cprint(f"Correct Guesses: {len(images)-len(incorrect_letters)}/{len(images)}")
-qs.cprint(f"Incorrect Guesses (intended | assumed): {incorrect_letters}")
+qs.cprint(f"Correct Guesses: {results_fraction} | {round(eval(results_fraction)*100)}%")
+qs.cprint(f"Incorrect Guesses (intended : assumed): {incorrect_letters}")
