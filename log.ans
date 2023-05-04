@@ -501,19 +501,19 @@ Iteration 500, loss = 0.01578922
 [33mPath: cap-a-0.png[0m
 [33mIntended Letter: A[0m
 [33mRaw Prediction: [[1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: A = A | correct[0m
+[32mGuess: A -> A | correct[0m
 [33mPath: cap-b-0.png[0m
 [33mIntended Letter: B[0m
 [33mRaw Prediction: [[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: B = B | correct[0m
+[32mGuess: B -> B | correct[0m
 [33mPath: cap-c-0.png[0m
 [33mIntended Letter: C[0m
 [33mRaw Prediction: [[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: C = C | correct[0m
+[32mGuess: C -> C | correct[0m
 [33mPath: cap-d-0.png[0m
 [33mIntended Letter: D[0m
 [33mRaw Prediction: [[0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: D = D | correct[0m
+[32mGuess: D -> D | correct[0m
 [33mPath: cap-e-0.png[0m
 [33mIntended Letter: E[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -525,11 +525,11 @@ Iteration 500, loss = 0.01578922
 [33mPath: cap-g-0.png[0m
 [33mIntended Letter: G[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: g = G | inncorect[0m
+[31mGuess: g -> G | inncorect[0m
 [33mPath: cap-h-0.png[0m
 [33mIntended Letter: H[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: H = H | correct[0m
+[32mGuess: H -> H | correct[0m
 [33mPath: cap-i-0.png[0m
 [33mIntended Letter: I[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
@@ -537,19 +537,19 @@ Iteration 500, loss = 0.01578922
 [33mPath: cap-j-0.png[0m
 [33mIntended Letter: J[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: i = J | inncorect[0m
+[31mGuess: i -> J | inncorect[0m
 [33mPath: cap-k-0.png[0m
 [33mIntended Letter: K[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: K = K | correct[0m
+[32mGuess: K -> K | correct[0m
 [33mPath: cap-l-0.png[0m
 [33mIntended Letter: L[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: L = L | correct[0m
+[32mGuess: L -> L | correct[0m
 [33mPath: cap-m-0.png[0m
 [33mIntended Letter: M[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: M = M | correct[0m
+[32mGuess: M -> M | correct[0m
 [33mPath: cap-n-0.png[0m
 [33mIntended Letter: N[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
@@ -557,27 +557,27 @@ Iteration 500, loss = 0.01578922
 [33mPath: cap-o-0.png[0m
 [33mIntended Letter: O[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[31mGuess: G = O | inncorect[0m
+[31mGuess: G -> O | inncorect[0m
 [33mPath: cap-p-0.png[0m
 [33mIntended Letter: P[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: r = P | inncorect[0m
+[31mGuess: r -> P | inncorect[0m
 [33mPath: cap-q-0.png[0m
 [33mIntended Letter: Q[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: Q = Q | correct[0m
+[32mGuess: Q -> Q | correct[0m
 [33mPath: cap-r-0.png[0m
 [33mIntended Letter: R[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1]][0m
-[32mGuess: R = R | correct[0m
+[32mGuess: R -> R | correct[0m
 [33mPath: cap-s-0.png[0m
 [33mIntended Letter: S[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: r = S | inncorect[0m
+[31mGuess: r -> S | inncorect[0m
 [33mPath: cap-t-0.png[0m
 [33mIntended Letter: T[0m
 [33mRaw Prediction: [[0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[31mGuess: D = T | inncorect[0m
+[31mGuess: D -> T | inncorect[0m
 [33mPath: cap-u-0.png[0m
 [33mIntended Letter: U[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
@@ -589,11 +589,11 @@ Iteration 500, loss = 0.01578922
 [33mPath: cap-w-0.png[0m
 [33mIntended Letter: W[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1]][0m
-[32mGuess: W = W | correct[0m
+[32mGuess: W -> W | correct[0m
 [33mPath: cap-x-0.png[0m
 [33mIntended Letter: X[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1]][0m
-[31mGuess: K = X | inncorect[0m
+[31mGuess: K -> X | inncorect[0m
 [33mPath: cap-y-z.png[0m
 [33mIntended Letter: Y[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
@@ -609,11 +609,11 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-b-0.png[0m
 [33mIntended Letter: b[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: h = b | inncorect[0m
+[31mGuess: h -> b | inncorect[0m
 [33mPath: low-c-0.png[0m
 [33mIntended Letter: c[0m
 [33mRaw Prediction: [[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
-[31mGuess: C = c | inncorect[0m
+[31mGuess: C -> c | inncorect[0m
 [33mPath: low-d-0.png[0m
 [33mIntended Letter: d[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -621,11 +621,11 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-e-0.png[0m
 [33mIntended Letter: e[0m
 [33mRaw Prediction: [[0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[32mGuess: e = e | correct[0m
+[32mGuess: e -> e | correct[0m
 [33mPath: low-f-0.png[0m
 [33mIntended Letter: f[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1]][0m
-[31mGuess: R = f | inncorect[0m
+[31mGuess: R -> f | inncorect[0m
 [33mPath: low-g-0.png[0m
 [33mIntended Letter: g[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]][0m
@@ -633,7 +633,7 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-h-0.png[0m
 [33mIntended Letter: h[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[32mGuess: h = h | correct[0m
+[32mGuess: h -> h | correct[0m
 [33mPath: low-i-0.png[0m
 [33mIntended Letter: i[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -645,19 +645,19 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-k-0.png[0m
 [33mIntended Letter: k[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[32mGuess: k = k | correct[0m
+[32mGuess: k -> k | correct[0m
 [33mPath: low-l-0.png[0m
 [33mIntended Letter: l[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: k = l | inncorect[0m
+[31mGuess: k -> l | inncorect[0m
 [33mPath: low-m-0.png[0m
 [33mIntended Letter: m[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0]][0m
-[31mGuess: u = m | inncorect[0m
+[31mGuess: u -> m | inncorect[0m
 [33mPath: low-n-0.png[0m
 [33mIntended Letter: n[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[32mGuess: n = n | correct[0m
+[32mGuess: n -> n | correct[0m
 [33mPath: low-o-0.png[0m
 [33mIntended Letter: o[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -665,11 +665,11 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-p-0.png[0m
 [33mIntended Letter: p[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: n = p | inncorect[0m
+[31mGuess: n -> p | inncorect[0m
 [33mPath: low-q-0.png[0m
 [33mIntended Letter: q[0m
 [33mRaw Prediction: [[1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: a = q | inncorect[0m
+[31mGuess: a -> q | inncorect[0m
 [33mPath: low-r-0.png[0m
 [33mIntended Letter: r[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -677,15 +677,15 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-s-0.png[0m
 [33mIntended Letter: s[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0]][0m
-[32mGuess: s = s | correct[0m
+[32mGuess: s -> s | correct[0m
 [33mPath: low-t-0.png[0m
 [33mIntended Letter: t[0m
 [33mRaw Prediction: [[0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: f = t | inncorect[0m
+[31mGuess: f -> t | inncorect[0m
 [33mPath: low-u-0.png[0m
 [33mIntended Letter: u[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]][0m
-[32mGuess: u = u | correct[0m
+[32mGuess: u -> u | correct[0m
 [33mPath: low-v-0.png[0m
 [33mIntended Letter: v[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -693,7 +693,7 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-w-0.png[0m
 [33mIntended Letter: w[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0]][0m
-[32mGuess: w = w | correct[0m
+[32mGuess: w -> w | correct[0m
 [33mPath: low-x-0.png[0m
 [33mIntended Letter: x[0m
 [33mRaw Prediction: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
@@ -705,6 +705,6 @@ Iteration 500, loss = 0.01578922
 [33mPath: low-z-0.png[0m
 [33mIntended Letter: z[0m
 [33mRaw Prediction: [[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]][0m
-[31mGuess: b = z | inncorect[0m
+[31mGuess: b -> z | inncorect[0m
 [34mCorrect Guesses: 18/52 | 35%[0m
 [34mIncorrect Guesses (intended : assumed): {'E': 'Error', 'F': 'Error', 'G': 'g', 'I': 'Error', 'J': 'i', 'N': 'Error', 'O': 'G', 'P': 'r', 'S': 'r', 'T': 'D', 'U': 'Error', 'V': 'Error', 'X': 'K', 'Y': 'Error', 'Z': 'Error', 'a': 'Error', 'b': 'h', 'c': 'C', 'd': 'Error', 'f': 'R', 'g': 'Error', 'i': 'Error', 'j': 'Error', 'l': 'k', 'm': 'u', 'o': 'Error', 'p': 'n', 'q': 'a', 'r': 'Error', 't': 'f', 'v': 'Error', 'x': 'Error', 'y': 'Error', 'z': 'b'}[0m
