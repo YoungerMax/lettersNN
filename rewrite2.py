@@ -86,31 +86,37 @@ clf.fit(X, y)
 
 
 os.chdir("../testing")
-images = os.listdir(".")
+images = sorted(os.listdir("."))
 incorrect_letters = {}
 
 for i in images:
     intended_letter = path_to_letter(i)
     activation = get_letter_activation(i)
+    qs.defaults.values["color"] = "yellow"
+
+    qs.cprint(f"Path: {i}")
+    qs.cprint(f"Intended Letter: {intended_letter}")
+
     prediction = clf.predict(
         [activation]
     )
-    assumed_letter, truth = confirm_output(prediction, intended_letter)
-    
-    qs.defaults.values["color"] = "yellow"
-    qs.cprint(f"Path: {i}")
-    qs.cprint(f"Intended Letter: {intended_letter}")
+
     qs.cprint(f"Raw Prediction: {prediction}")
-    
     qs.defaults.reset()
 
-    if not truth:
-        incorrect_letters[intended_letter] = assumed_letter
-        qs.cprint(f"Guess: {assumed_letter} = {intended_letter} | inncorect", color="red")
+    try:
+        assumed_letter, truth = confirm_output(prediction, intended_letter)
+        if not truth:
+            incorrect_letters[intended_letter] = assumed_letter
+            qs.cprint(f"Guess: {assumed_letter} = {intended_letter} | inncorect", color="red")
+            continue
+    except:
+        incorrect_letters[intended_letter] = "Error"
+        qs.cprint(f"Unable to generate prediction | inncorect", color="red")
         continue
 
     qs.cprint(f"Guess: {assumed_letter} = {intended_letter} | correct", color="green")
 
 qs.defaults.values["color"] = "blue"
-qs.cprint(f"Guesses: {len(images)-len(incorrect_letters)}/{len(images)}")
+qs.cprint(f"Correct Guesses: {len(images)-len(incorrect_letters)}/{len(images)}")
 qs.cprint(f"Incorrect Guesses (intended | assumed): {incorrect_letters}")
