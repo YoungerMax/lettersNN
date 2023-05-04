@@ -26,7 +26,7 @@ def get_letter_activation(path: str) -> list:
 
 def confirm_output(output: np.array, letter: str) -> bool:
     output = output[0].tolist()
-    assumed_letter = listOfLetters[:-1][output.index(1)].lower()
+    assumed_letter = listOfLetters[output[:-1].index(1)].lower()
     if output[-1]:
         assumed_letter = assumed_letter.upper()
     return [assumed_letter, assumed_letter == letter]
