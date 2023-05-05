@@ -9,6 +9,7 @@ from PIL import Image
 listOfImages = os.listdir("newData")
 listOfLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 os.chdir("newData")
+qs.defaults.values["modifier"] = "time_display"
 
 random.shuffle(listOfImages)
 
@@ -104,7 +105,7 @@ for i in images:
     )
 
     qs.xprint(f"Raw Prediction: {prediction}")
-    qs.defaults.reset()
+    qs.defaults.value["color"] = None
 
     try:
         assumed_letter, truth = confirm_output(prediction, intended_letter)
