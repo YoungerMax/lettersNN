@@ -96,31 +96,31 @@ for i in images:
     activation = get_letter_activation(i)
     qs.defaults.values["color"] = "yellow"
 
-    qs.cprint(f"Path: {i}")
-    qs.cprint(f"Intended Letter: {intended_letter}")
+    qs.xprint(f"Path: {i}")
+    qs.xprint(f"Intended Letter: {intended_letter}")
 
     prediction = clf.predict(
         [activation]
     )
 
-    qs.cprint(f"Raw Prediction: {prediction}")
+    qs.xprint(f"Raw Prediction: {prediction}")
     qs.defaults.reset()
 
     try:
         assumed_letter, truth = confirm_output(prediction, intended_letter)
         if not truth:
             incorrect_letters[intended_letter] = assumed_letter
-            qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | incorrect", color="red")
+            qs.xprint(f"Guess: {assumed_letter} -> {intended_letter} | incorrect", color="red")
             continue
     except:
         incorrect_letters[intended_letter] = "Error"
-        qs.cprint("Unable to generate prediction | incorrect", color="red")
+        qs.xprint("Unable to generate prediction | incorrect", color="red")
         continue
 
-    qs.cprint(f"Guess: {assumed_letter} -> {intended_letter} | correct", color="green")
+    qs.xprint(f"Guess: {assumed_letter} -> {intended_letter} | correct", color="green")
 
 results_fraction = f"{len(images)-len(incorrect_letters)}/{len(images)}"
 qs.defaults.values["color"] = "blue"
-qs.cprint(f"Correct Guesses: {results_fraction} | {round(eval(results_fraction)*100)}%")
-qs.cprint(f"Incorrect Guesses (intended : assumed): {incorrect_letters}")
+qs.xprint(f"Correct Guesses: {results_fraction} | {round(eval(results_fraction)*100)}%")
+qs.xprint(f"Incorrect Guesses (intended : assumed): {incorrect_letters}")
 # """
