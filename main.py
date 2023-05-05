@@ -105,7 +105,7 @@ for i in images:
     )
 
     qs.xprint(f"Raw Prediction: {prediction}")
-    qs.defaults.value["color"] = None
+    qs.defaults.values["color"] = None
 
     try:
         assumed_letter, truth = confirm_output(prediction, intended_letter)
