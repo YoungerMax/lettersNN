@@ -63,7 +63,7 @@ print(''.join([f"<option>{cls}</option>" for cls in CLASSES]))
 				for (let y = 0; ctx.canvas.height > y; y += scaleFactorH) {
 					const data = ctx.getImageData(x, y, scaleFactorW, scaleFactorH).data;
 
-					// Take average of chunk
+					// Take max of chunk
 					let max = 0;
 
 					for (let i = 0; data.length > i; i += 4) {
