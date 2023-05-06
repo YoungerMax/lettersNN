@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Data collection tool</title>		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+
+		<br />
+
+		<select id="letter-class">
+			<!--
+import string
+
+CLASSES = []
+CLASSES.extend([f'cap-{letter}' for letter in string.ascii_lowercase])
+CLASSES.extend([f'low-{letter}' for letter in string.ascii_lowercase])
+
+print(''.join([f"<option>{cls}</option>" for cls in CLASSES]))
+			-->
+			<option>cap-a</option><option>cap-b</option><option>cap-c</option><option>cap-d</option><option>cap-e</option><option>cap-f</option><option>cap-g</option><option>cap-h</option><option>cap-i</option><option>cap-j</option><option>cap-k</option><option>cap-l</option><option>cap-m</option><option>cap-n</option><option>cap-o</option><option>cap-p</option><option>cap-q</option><option>cap-r</option><option>cap-s</option><option>cap-t</option><option>cap-u</option><option>cap-v</option><option>cap-w</option><option>cap-x</option><option>cap-y</option><option>cap-z</option><option>low-a</option><option>low-b</option><option>low-c</option><option>low-d</option><option>low-e</option><option>low-f</option><option>low-g</option><option>low-h</option><option>low-i</option><option>low-j</option><option>low-k</option><option>low-l</option><option>low-m</option><option>low-n</option><option>low-o</option><option>low-p</option><option>low-q</option><option>low-r</option><option>low-s</option><option>low-t</option><option>low-u</option><option>low-v</option><option>low-w</option><option>low-x</option><option>low-y</option><option>low-z</option>
+		</select>
+		<button id="save" onclick="saveImage()">Save</button>
+	</body>
+	<script>
+		// Adapted from https://stackoverflow.com/a/30684711/19506738
+
+		const classSelector = document.getElementById("letter-class");
+		const canvas = document.getElementById("canvas");
+		const ctx = canvas.getContext("2d");
+
+		let mouseX;
+		let mouseY;
+
+		function updatePosition(event) {
+			mouseX = event.clientX;
+			mouseY = event.clientY;
+		}
+
+		function initializeCanvas() {
+			ctx.canvas.width = 28 * 16;  // factor
+			ctx.canvas.height = 28 * 16; // factor
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		}
+
+
+		function saveImage() {
+			let downsizedCanvas = document.createElement("canvas");
+			let dcCtx = downsizedCanvas.getContext('2d');
+			dcCtx.canvas.width = 28;
+			dcCtx.canvas.height = 28;
+			dcCtx.fillStyle = "#000000";
+			dcCtx.fillRect(0, 0, dcCtx.canvas.width, dcCtx.canvas.height);
+
+			const scaleFactorW = ctx.canvas.width / dcCtx.canvas.width;
+			const scaleFactorH = ctx.canvas.height / dcCtx.canvas.height;
+
+			// Scale down image
+			for (let x = 0; ctx.canvas.width > x; x += scaleFactorW) {
+				for (let y = 0; ctx.canvas.height > y; y += scaleFactorH) {
+					const data = ctx.getImageData(x, y, scaleFactorW, scaleFactorH).data;
+
+					// Take average of chunk
+					let max = 0;
+
+					for (let i = 0; data.length > i; i += 4) {
+						max = Math.max(max, data[i]);
+					}
+
+					// Draw that as color
+					dcCtx.fillStyle = `rgb(${max}, ${max}, ${max})`;
+					dcCtx.fillRect(x / scaleFactorW, y / scaleFactorH, 1, 1);
+				}
+			}
+
+			// Download image
+			let url = downsizedCanvas.toDataURL('png');
+			let tempA = document.createElement('a');
+			tempA.download = `${classSelector.value}-${Date.now()}.png`;
+			tempA.href = url;
+			tempA.click();
+
+			// Clean up
+			downsizedCanvas.remove();
+			tempA.remove();
+		}
+
+		function draw(event) {
+			if (event.buttons !== 1) return;
+
+			ctx.lineWidth = 24;
+			ctx.strokeStyle = "#ffffff";
+			ctx.lineCap = "round";
+
+			ctx.moveTo(mouseX, mouseY);
+			updatePosition(event);
+			ctx.lineTo(mouseX, mouseY);
+			ctx.stroke();
+		}
+		
+		canvas.addEventListener("mousemove", draw);
+		canvas.addEventListener("mousedown", updatePosition);
+		canvas.addEventListener("mouseenter", updatePosition);
+		document.addEventListener("DOMContentLoaded", initializeCanvas);
+	</script>
+</html>
